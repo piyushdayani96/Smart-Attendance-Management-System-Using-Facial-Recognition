@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap 4 Sticky Top Navbar</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+       <!---------------------------------------------------------------------------------------!>
+       <!--------------------------------------------------------------------------------------->
+
+
+        <div class="table-responsive">
+             <center><h3>{{p}}</h3></center>
+      <table border="1" style="margin:0px auto;width:90%" class="table">
+          <thead class="table-dark" style="text-align:center">
+             <tr>
+                 <td>Subject Name</td>
+                 <td>Branch</td>
+                 <td>Semester</td>
+                 <td>Subject Code</td>
+                 <td>Teacher's Name</td>
+                 <td>Student Group</td>
+             </tr>
+          </thead>
+          {% for e in ss%}
+
+          <tbody class="table-hover">
+
+               <tr class="table-primary" style="text-align:center">
+                   <td>{{e.subjectname}}</td>
+                   <td>{{e.dept}}</td>
+                   <td>{{e.semester}}</td>
+                   <td>{{e.subjectcode}}</td>
+                   <td>{{e.teachername}}</td>
+                   <td>{{e.studentgroup}}</td>
+
+               </tr>
+
+          </tbody>
+
+
+{%endfor%}
+            </table>
+           <br/>
+</div>
+
+       <br/>
+       <br/>
+
+       <!---------------------------------------------------------------------------------------->
+       <!---------------------------------------------------------------------------------------->
+
+
+       <!---------------------------------------------------------------------------------------->
+       <!---------------------------------------------------------------------------------------->
+
+
+          <center>
+<form action="{%url 'director:createsubject'%}" method="post">
+{%csrf_token%}
+    <button type="submit" name="addsubject" id="addsubject">Add Subject</button>
+</form>
+                 </center>
+</body>
+</html>

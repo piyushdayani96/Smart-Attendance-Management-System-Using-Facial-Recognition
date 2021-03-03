@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Call Processing Optimization</title>
+        <style>
+            #outer
+            {
+            height:750px;
+            width:800px;
+            border:1px solid;
+            //background-color:blue;
+            margin:auto;
+            }
+            #parent1
+            {
+            height:100px;
+            width:800px;
+            background-color:blue;
+            }
+            #logo
+            {
+            height:100px;
+            width:200px;
+            background-color:orange;
+            float:left;
+            }
+            #header
+            {
+            height:100px;
+            width:600px;
+            background-color:pink;
+            float:right;
+
+            }
+            #menu
+            {
+            height:100px;
+            width:800px;
+            background-color:red;
+            border:1px solid;
+            }
+            #main
+            {
+            height:400px;
+            width:800px;
+            background-color:yellow;
+            }
+            #parent2
+            {
+            height:150px;
+            width:800px;
+            //background-color:black;
+            }
+            #child1
+            {
+            height:150px;
+            width:400px;
+            background-color:orange;
+            float:left;
+            }
+             #child2
+            {
+            height:150px;
+            width:400px;
+            background-color:gray;
+            float:right;
+            }
+            #menu
+            {
+            height:100px;
+            width:800px;
+            border:1px solid white;
+            margin:auto;
+            }
+            #menu ul
+            {
+            list-style-type:none;
+            line-height:50px;
+            margin:20px;
+            }
+            #menu ul li
+            {
+            color:black;
+            display:inline;
+            padding:10px;
+
+            }
+            #menu ul li a
+            {
+            color-black;
+            text-decoration:none;
+
+            }
+            #menu ul li a hover;
+            {
+            color:red;
+            }
+        </style>
+
+</head>
+<body>
+<center>
+<h1>Welcome to userzone</h1>
+{% if name %}
+<p>Hello</p>
+{% endif %}
+    </center>
+<div id="outer">
+    <div id="parent1">
+    <div id="logo">
+
+    </div>
+    <div id="header">
+        <center>
+        <h1>Welcome to user zone</h1>
+            </center>
+
+    </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="{% url 'userzone:userzone' %}">Home</a></li>
+
+            <li><a href="{% url 'userzone:discussion' %}">Discussion</a></li>
+            <li><a href="{% url 'userzone:searchsolution' %}">Search Solution</a></li>
+            <li><a href="{% url 'userzone:complainlog' %}">Complain Log</a></li>
+            <li><a href="{% url 'userzone:changepassword' %}">Change Password</a></li>
+            <li><a href="{% url 'userzone:Logout' %}">Logout</a></li>
+
+
+        </ul>
+
+
+    </div>
+    <div id="main">
+        <form action="{% url 'userzone:search' %}" method="post">
+            {% csrf_token %}
+         <h2 style="color:blue; text-align:center;">
+            Search solution
+
+            </h2>
+            <table border="1" style="width:50%;margin:0 auto;">
+                <tr>
+                    <td>Enter problemid or problemtext</td>
+                    <td>
+                        <textarea name="searchtext" required style="height:100px;resize:none;"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="search"/>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+        <ul>
+        {% for k in kw %}
+            <li style="color:red">{{k.problemtext}}</li>
+            <li style="color:green">{{k.solutiontext}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div id="parent2">
+        <div id="child1">
+            <center>
+                <h2> copyright@to cpo</h2>
+            </center>
+
+        </div>
+        <div id="child2">
+            <center>
+                <h2>Devloped by : Shivani</h2>
+            </center>
+
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>

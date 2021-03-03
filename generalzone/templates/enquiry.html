@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REC Sonbhadra</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet" >
+    <style >
+    .bs-example{
+       // margin-top: 20px;
+    }
+
+</style>
+</head>
+<body>
+<div class="bs-example">
+
+
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="{%url 'index'%}" class="nav-item nav-link " style="color:white;">Home</a>
+                <a href="{%url 'about'%}" class="nav-item nav-link" style="color:white;">About Us</a>
+                <a href="{%url 'registration'%}" class="nav-item nav-link" style="color:white;">Registration</a>
+                <a href="{%url 'enquiry'%}" class="nav-item nav-link active" >Enquiry</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                   </div>
+        </div>
+
+    </nav>
+  <div class="container-fluid">
+
+<div class="container-fluid" style="min-height:50px;">
+<div class="row" style="min-height:400px;background-color:black;">
+
+
+
+<div class="row" id="parent">
+
+     <div class="col-sm-4" id="left">
+<marquee direction="up" height="400px" onmouseover="stop()" onmouseout="start()">
+
+                 </marquee>
+    </div>
+<div class="col-sm-8" id="main" style="">
+  <center>
+      <h1 style="color:black"><u>REC Sonhadra</u></h1>
+        <form class="form-horizontal" action="{% url 'saveenquiry' %}" method="post">
+
+                {% csrf_token %}
+
+
+                <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" for="name"><b>Name:</b></label>
+
+    <input type="text" class="form-control col-sm-5" name="name" id="name" placeholder="Enter Name" required>
+
+
+                </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <label class="control-label col-sm-2"  ><b>Gender :</b></label>
+                     <label class="control-label col-sm-1 " for="radio1">
+        <input type="radio" class="form-check-input" id="radio1" name="gender" value="male" checked >
+                        Male
+      </label>
+                        <label class="control-label col-sm-1" for="radio2">
+        <input type="radio" class="form-check-input" id="radio2" name="gender" value="female">Female:
+      </label>
+
+
+
+    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-2"for="address"><b>Enter Address:</b></label>
+  <textarea class="form-control col-sm-5" rows="5" id="address"  name="address" required style="resize:none;" placeholder="Enter Address"></textarea>
+</div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" for="contactno"><b>Contact No:</b></label>
+
+    <input type="text"  class="form-control col-sm-5" name="contactno" id="contactno" placeholder="Enter Contact No" required>
+
+</div>
+                </div>
+<div class="form-group">
+    <div class="row">
+                    <label class="control-label col-sm-2" for="emailaddress"><b>Email:</b></label>
+
+    <input type="text" class="form-control col-sm-5" name="emailaddress" id="emailaddress" placeholder="Enter email" required>
+
+
+    </div>  </div>
+
+
+                 <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-2"for="enquirytext"><b>Enquiry Text:</b></label>
+  <textarea class="form-control col-sm-5" rows="5" id="enquirytext"  name="enquirytext" required placeholder="Enter Enquiry Text" style="resize:none;"></textarea>
+</div>
+                </div>
+
+        <div class="form-group">
+                    <div class="row">
+
+
+                        <div class="checkbox col-sm-2">
+
+
+</div>
+
+                    <div class="col-sm-5">
+                        <button type="submit" class="btn btn-success">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </form>
+
+
+      </center>
+</div>
+
+</div>
+    <div class="row" id="footer">
+        <div class="col-sm-6" id="lfooter">
+            Copyright&copy; &nbsp; to CPO
+        </div>
+          <div class="col-sm-6" id="rfooter">
+          Developed by
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+         #outer
+        {
+        height:1350px;
+        width:100%;
+        backgound:black;
+        //box-shadow: 10px 10px #888888;
+        //border:7px solid black;
+        margin:0px auto;
+        }
+        #header1
+        {
+        height:150px;
+        width:100%;
+        backgound-color:black;
+        border:1px solid black;
+        }
+        #logo
+        {
+        width:150px;
+        height:150px;
+        background-color:cyan;
+        float:left;
+        }
+        #banner
+        {
+        width:1050px;
+        height:150px;
+        background-color:white;
+        font-size:50px;
+         font-weight: bold;
+        font-family: "Times New Roman", Times, serif;
+        color:#4285F4;
+        float:right;
+        text-align:center;
+        line-height:150px;
+        }
+        #menu
+        {
+        height:50px;
+        width:100%;
+            background-color:#81d4fa;
+        //background-color:#2196f3;
+        border:1px solid black;
+        }
+        #menu ul li a:hover
+        {
+        color:white;
+        }
+        #menu ul li:hover
+        {
+         background-color:black;
+         color:white;
+        }
+        #menu ul li
+        {
+        display:inline;
+        }
+        #menu ul
+        {
+        list-style-type:none;
+        }
+        #menu ul li a
+        {
+        text-decoration:none;
+        font-size:15px;
+        color:black;
+        }
+        #menu ul li
+        {
+        padding:18px;
+        margin-left:10px;
+        //border:1px solid;
+        }
+        #slider
+        {
+        height:400px;
+        width:100%;
+        background-color:black;
+        border:1px solid black;
+        }
+        #parent
+        {
+        height:670px;
+        width:100%-;
+        background-color:white;
+        border:1px solid black;
+        }
+        #left
+        {
+        height:670px;
+        width:400px;
+        background-color:#81d4fa;
+        float:left;
+
+        }
+        #main
+        {
+        height:670px;
+        width:882px;
+        float:left;
+        background-color:#bbdefb ;
+        }
+        #footer
+        {
+        height:70px;
+        width:100%;
+        border:1px solid black;
+        }
+        #lfooter
+        {
+        height:70px;
+        width:50%;
+        background-color:black;
+        float:left;
+        color:white;
+        font-size:25px;
+        line-height:70px;
+        text-align:center;
+        }
+        #rfooter
+        {
+        height:70px;
+        width:50%;
+        background-color:black;
+        float:left;
+         color:white;
+         font-size:25px;
+        line-height:70px;
+        text-align:center;
+        }
+        table
+        {
+        width:50%;
+        margin: 0px auto;
+        cellspacing:50px;
+        border:1px solid black;
+        cellpadding:100px;
+        }
+        table td,tr
+        {
+        cellpadding:100px;
+        }
+        #formin
+                {
+                border:1px solid;
+                margin-top:20px;
+                 box-shadow: 5px 10px #888888;
+                 background-color:#d0d6e2;
+                  color:#0d47a1;
+
+                }
+
+
+
+

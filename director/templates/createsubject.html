@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap 4 Sticky Top Navbar</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<body>
+
+<form class="form-horizontal" action="{%url 'director:savesubject' %}"  method="post">
+
+                {% csrf_token %}
+
+
+                <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" for="subjectname"><b>Subject Name:</b></label>
+
+    <input type="text" class="form-control col-sm-5" name="subjectname" id="subjectname" placeholder="Enter Subject Name" required>
+
+
+                </div>
+
+                </div>
+
+
+
+
+    <div class="form-group">
+        <div class="row">
+                    <label class="control-label col-sm-2" for="deptname"><b>Department</b></label>
+
+    <select class="form-control col-sm-5" id="deptname" name="deptname" >{% for y in y %}
+  <option class="form-control col-sm-5"  value="{{y.deptname}}">{{y.deptname}}</option>
+     {%endfor%}</select>
+
+
+        </div>   </div>
+
+    <div class="form-group">
+        <div class="row">
+                    <label class="control-label col-sm-2" for="semester"><b>Semester</b></label>
+
+    <input type="text" class="form-control col-sm-5" name="semester" id="semester" placeholder="Enter Semester" required>
+
+
+        </div>   </div>
+
+      <div class="form-group">
+        <div class="row">
+                    <label class="control-label col-sm-2" for="subjectcode"><b>Subject Code</b></label>
+
+    <input type="text" class="form-control col-sm-5" name="subjectcode" id="subjectcode" placeholder="Enter Subject Code" required>
+
+
+        </div>   </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" for="teachername"><b>Teacher's Name</b></label>
+ <select class="form-control col-sm-5" id="teachername" name="teachername" >{% for e in x %}
+  <option class="form-control col-sm-5"  value="{{e.userid}}">{{e.userid}}</option>
+     {%endfor%}</select>
+
+
+</div>
+                </div>
+
+
+
+
+
+
+
+
+
+                    <div class="col-sm-5"><input type="hidden" name="id" value="{{id}}"/>
+                        <button type="submit" class="btn btn-success">
+                            Add Subject
+                        </button>
+                    </div>
+
+</form>
+
+</body>
+</html>

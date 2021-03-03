@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap 4 Sticky Top Navbar</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    <style>
+    div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+
+        /* The heart of the matter */
+
+        .horizontal-scrollable > .scrollmenu {
+            overflow-x: auto;
+
+        }
+
+        .horizontal-scrollable > .scrollmenu > .col-xs-4 {
+            display: inline-block;
+            float: none;
+        }
+        /* Decorations */
+
+        .col-xs-4 {
+
+            font-size: 24px;
+            padding-bottom: 20px;
+            padding-top: 18px;
+        }
+
+        .col-xs-4:nth-child(2n+1) {
+
+        }
+
+        .col-xs-4:nth-child(2n+2) {
+
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+ <div class="table-responsive" class="container-fluid">
+
+      <table border="1" style="margin:0px auto;width:100%" class="table">
+          <thead class="table-dark" style="text-align:center">
+             <tr>
+                 <td>Subject Name</td>
+                 <td>Branch</td>
+                 <td>Semester</td>
+                 <td>Subject Code</td>
+                 <td>Teacher's Name</td>
+                 <td>Student Group</td>
+
+             </tr>
+          </thead>
+
+
+          <tbody class="table-hover">
+
+               <tr class="table-primary" style="text-align:center">
+                   <td>{{x.subjectname}}</td>
+                   <td>{{x.dept}}</td>
+                   <td>{{x.semester}}</td>
+                   <td>{{x.subjectcode}}</td>
+                   <td>{{x.teachername}}</td>
+                   <td>{%ifequal x.studentgroup ''%}
+                       <a href="{%url 'teachers:createstudentgroup' x.id%}">Add Student Group</a>
+                       {%endifequal%}
+                       {{x.studentgroup}}
+                       </td>
+               </tr>
+
+          </tbody>
+
+            </table>
+           <br/>
+</div>
+
+
+
+ <div class="table-responsive" class="container-fluid">
+       <table border="1" style="margin:0px auto;width:100%" class="table">
+
+          <thead class="table-dark" style="text-align:center">
+          <tr><td>Month</td><td>File Download</td></tr>
+          </thead>
+           <tbody class="table-hover">
+
+
+{%if files.0 is not None %}
+           <tr class="table-primary" style="text-align:center"><td>{{mn.0}}</td><td><a href="{{files.0}}" download="{{files.0}}">Download</a> </td></tr>{%endif%}
+{%if files.1 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.1}}</td><td><a href="{{files.1}}" download="{{files.1}}">Download</a> </td></tr>{%endif%}
+    {%if files.2 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.2}}</td><td><a href="{{files.2}}" download="{{files.2}}">Download</a> </td></tr>{%endif%}
+{%if files.3 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.3}}</td><td><a href="{{files.3}}" download="{{files.3}}">Download</a> </td></tr>{%endif%}
+{%if files.4 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.4}}</td><td><a href="{{files.4}}" download="{{files.4}}">Download</a> </td></tr>{%endif%}
+{%if files.5 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.5}}</td><td><a href="{{files.5}}" download="{{files.5}}">Download</a> </td></tr>{%endif%}
+{%if files.6 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.6}}</td><td><a href="{{files.6}}" download="{{files.6}}">Download</a> </td></tr>{%endif%}
+       {%if files.7 is not None %}
+           <tr class="table-primary" style="text-align:center"><td>{{mn.7}}</td><td><a href="{{files.7}}" download="{{files.7}}">Download</a> </td></tr>{%endif%}
+{%if files.8 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.8}}</td><td><a href="{{files.8}}" download="{{files.8}}">Download</a> </td></tr>{%endif%}
+{%if files.9 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.9}}</td><td><a href="{{files.9}}" download="{{files.9}}">Download</a> </td></tr>{%endif%}
+          {%if files.10 is not None %}
+           <tr class="table-primary" style="text-align:center"><td>{{mn.10}}</td><td><a href="{{files.10}}" download="{{files.10}}">Download</a> </td></tr>{%endif%}
+{%if files.11 is not None %}
+<tr class="table-primary" style="text-align:center"><td>{{mn.11}}</td><td><a href="{{files.11}}" download="{{files.11}}">Download</a> </td></tr>{%endif%}
+
+
+
+           </tbody>
+       </table>
+     </div>
+
+
+
+
+
+
+
+</body>
+</html>

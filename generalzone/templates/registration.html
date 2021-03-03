@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static%}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REC Sonbhadra</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="{% static 'css/style.css'%}" type="text/css" rel="stylesheet" >
+    <style >
+    .bs-example{
+       // margin-top: 20px;
+    }
+
+</style>
+</head>
+<body>
+<div class="bs-example">
+
+
+    <nav class="navbar navbar-expand-md navbar-light bg-info">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="{%url 'index'%}" class="nav-item nav-link" style="color:white;">Home</a>
+                <a href="{%url 'about'%}" class="nav-item nav-link" style="color:white;">About Us</a>
+                <a href="{%url 'registration'%}" class="nav-item nav-link  active" >Registration</a>
+                <a href="{%url 'enquiry'%}" class="nav-item nav-link" style="color:white;">Enquiry</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                   </div>
+        </div>
+
+    </nav>
+
+
+<div class="container-fluid" style="min-height:50px;">
+<div class="row" id="parent">
+
+     <div class="col-sm-4" id="left">
+<marquee direction="up" height="400px" onmouseover="stop()" onmouseout="start()">
+             {% for n in nf %}
+                  <div style="background:white;border:2px solid black;margin-top:3px;">
+             <span style="text-align:center">
+             <p style="color:black;font-size:20px;">{{n.notificationtext}}</p>
+             <p>{{n.posteddate}}</p>
+                 </span>
+                     </div>
+             {% endfor%}
+                 </marquee>
+    </div>
+<div class="col-sm-8" id="main" style="">
+
+    <h1>Registration Form</h1>
+    <form class="form-horizontal"   method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+          <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Name:</b></label>
+
+                        {{ form.name }}
+                </div>
+          </div>
+              <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Gender:</b></label>
+                        {{ form.gender }}
+                </div>
+              </div>
+        <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Contact:</b></label>
+                        {{ form.contactno }}
+                </div>
+          </div>
+              <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Address:</b></label>
+                        {{ form.address }}
+                </div>
+              </div>
+          <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Branch:</b></label>
+                        {{ form.branch}}
+                </div>
+          </div>
+              <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Rollno:</b></label>
+                        {{ form.rollno }}
+                </div>
+              </div>
+         <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Email Address:</b></label>
+                        {{ form.emailaddress  }}
+                </div>
+              </div>
+         <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>Password:</b></label>
+                        {{ form.password  }}
+                </div>
+              </div>
+         <div class="form-group">
+                    <div class="row">
+                    <label class="control-label col-sm-2" ><b>File:</b></label>
+                        {{ form.file }}
+                </div>
+              </div>
+                        <button type="submit" class="btn btn-success">
+                            Submit
+                        </button>
+
+            </form>
+
+
+</div>
+
+</div>
+    <div class="row" id="footer">
+        <div class="col-sm-6" id="lfooter">
+            Copyright&copy; &nbsp; to REC Sonbhadra
+        </div>
+          <div class="col-sm-6" id="rfooter">
+
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
